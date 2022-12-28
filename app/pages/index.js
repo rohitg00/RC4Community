@@ -1,8 +1,7 @@
+import TweetTimeline from "../components/tweettimeline";
 
 import Hero from "../components/Hero/Hero";
 import Nav from "../components/Hero/Nav";
-
-
 
 let imgUrl = "bgdevops.gif";
 const gifStyle = {
@@ -37,7 +36,7 @@ export default function Home() {
           <Hero></Hero>
         </div>
       </div>
-      {/* <Tweettimeline /> */}
+      <TweetTimeline/>
     </>
   );
 }
