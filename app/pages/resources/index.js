@@ -7,8 +7,8 @@ import { InstantSearch, SearchBox, Hits } from 'react-instantsearch-dom';
 import {motion} from "framer-motion"
 
 const searchClient = instantMeiliSearch(
-  "https://ms-7e319a27bb93-1128.sgp.meilisearch.io",
-  "076ef33a1fdb9eb27f0e58f76a75ba939e1714d4"
+  process.env.MEILISEARCH_DEPLOYED,
+  process.env.MEILISEARCH_KEY
 )
 
 function Hit({ hit }) {
