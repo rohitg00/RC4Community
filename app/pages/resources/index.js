@@ -1,7 +1,21 @@
-import AllCards from '../../components/filtered-search-bar/AllCards';
+import Card from '../../components/filtered-search-bar/Card';
 import Filter from '../../components/filtered-search-bar/Filter';
 import { useState, useEffect } from 'react';
 import Nav from '../../components/Hero/Nav';
+import { instantMeiliSearch } from '@meilisearch/instant-meilisearch'
+import { InstantSearch, SearchBox, Hits } from 'react-instantsearch-dom';
+import {motion} from "framer-motion"
+
+const searchClient = instantMeiliSearch(
+  "https://ms-7e319a27bb93-1128.sgp.meilisearch.io",
+  "076ef33a1fdb9eb27f0e58f76a75ba939e1714d4"
+)
+
+function Hit({ hit }) {
+  return (
+    <Card name={hit.name} info={hit.info} key={hit.id} value={hit.value}/>
+  );
+}
 
 export default function Home() {
   const [resource, setresource] = useState();
@@ -111,6 +125,7 @@ export default function Home() {
   const [trigger, setTrigger] = useState(true);
   const [searchParam] = useState(["name"]);
 
+
   function search(items) {
     return items?.filter((item) => {
       if (item.id > 7) {
@@ -131,7 +146,7 @@ export default function Home() {
           ALL RESOURCES
         </h1>
         <div className=" m-auto">
-          <div className="flex md:h-12 md:mb-[1.8rem] justify-center">
+          {/* <div className="flex md:h-12 md:mb-[1.8rem] justify-center">
             <input
               type="search"
               name="search-form"
@@ -144,7 +159,21 @@ export default function Home() {
                 setTrigger(true);
               }}
             />
-          </div>
+          </div> */}
+
+          <InstantSearch indexName="resources" searchClient={searchClient}>
+            <div className="">
+              <SearchBox classNames={{
+                root: "flex md:h-12 md:mb-[1.8rem] justify-center",
+                input: 'mt-5 ml-[2px] w-64  h-8 md:mt-9 pl-2 md:w-10/11 md:h-12 sm:w-6/12',
+              }}/>
+            </div>
+          <motion.div layout className="grid place-items-center grid-cols-1 gap-10 sm:grid-cols-2 xl:grid-cols-3 md:mt-10 md:pb-10">
+            <Hits hitComponent={Hit} className="flex sm:min-w-96  min-h-96 "/>
+          </motion.div>
+
+          </InstantSearch>
+
           <div className="sm:mt-9 flex flex-col ml-[3.8rem] sm:ml-[29.8rem]">
             <div className="mb-5">
               {trigger &&
@@ -165,18 +194,26 @@ export default function Home() {
                 })}
             </div>
           </div>
-          <div className="flex justify-center">
+          {/* <div className="flex justify-center">
             <Filter
               resources={resource}
               setFiltered={setFiltered}
               activeOption={activeOption}
               setActiveOption={setActiveOption}
             />
-          </div>
+          </div> */}
 
-          <div>
+          {/* <motion.div layout className="grid place-items-center grid-cols-1 gap-10 sm:grid-cols-2 xl:grid-cols-3 md:mt-10 md:pb-10">
+            .map((x) => {
+              if(x.id>7){
+                return <Card name={x.name} info={x.info} key={x.id} value={x.value}/>;
+              }
+            })}
+          </motion.div> */}
+
+          {/* <div>
             <AllCards data={filtered} search={search} />
-          </div>
+          </div> */}
         </div>
       </div>
     );
