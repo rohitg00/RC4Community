@@ -126,7 +126,7 @@ export default function Home() {
   if (resource) {
     return (<>
       
-      <div className="bg-black  min-h-screen py-6 px-5 sm:px-16 bg-[url('/elipses.png')]  bg-repeat bg-contain">
+      <div className="bg-black  min-h-screen py-6 px-5 sm:px-16 bg-[url('/mask.png')]  bg-repeat bg-cover">
         <Nav></Nav>
         <div className=" ">
     <h1 className="flex text-white text-2xl justify-center sm:text-5xl font-bold pt-10">
