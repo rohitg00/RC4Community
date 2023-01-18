@@ -1,8 +1,6 @@
-
 import Hero from "../components/Hero/Hero";
 import Nav from "../components/Hero/Nav";
 import { getTweets } from '../lib/twitterAPI.js';
-
 import Timeline from "../components/Timeline";
 
 let imgUrl = "bgdevops.gif";
@@ -11,7 +9,9 @@ const gifStyle = {
   opacity: 0.3,
 };
 
-export default function Home({ tweets }) {
+export default async function Home() {
+  const tweets = await getTweets(["1537460982582128641", "1581497472043536385", "1586751198962495489", "1523372831513673729", "1526398860389519361", "1555793156847063040", "1547812558295670784", "1560892185842941953"]);
+
   return (
     <>
       <div className="bg-black">
@@ -27,10 +27,4 @@ export default function Home({ tweets }) {
       <Timeline tweets={tweets} />
     </>
   );
-}
-
-export async function getStaticProps() {
-  const tweets = await getTweets(["1537460982582128641", "1581497472043536385", "1586751198962495489", "1523372831513673729", "1526398860389519361", "1555793156847063040", "1547812558295670784", "1560892185842941953"]);
-
-  return { props: { tweets } };
 }
