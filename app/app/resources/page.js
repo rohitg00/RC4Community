@@ -4,8 +4,9 @@ import FilterResource from './FilterResource';
 async function getResources() {
     const markdown_resource = await fetch(
         "https://raw.githubusercontent.com/rohitg00/DevOpsCommunity/main/README.md"
-    )
+        , { next: { revalidate: 60 } })
     const json = []
+    console.log("fetched")
     const markdown = await markdown_resource.text()
     let lines = markdown.split("\n");
     let i = 0;

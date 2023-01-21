@@ -1,10 +1,10 @@
 'use client';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
 import styles from '../styles/Timeline.module.css';
 import Link from 'next/link';
-
+import useWindowSize from '../components/hooks/useWindowSize';
 import Tweet from './Tweet/EmbeddedTweet';
 
 export default function Timeline({ tweets }) {
@@ -177,27 +177,4 @@ export default function Timeline({ tweets }) {
       </main>
     );
   }
-}
-
-function useWindowSize() {
-  const [windowSize, setWindowSize] = useState({
-    width: undefined,
-    height: undefined,
-  });
-
-  useEffect(() => {
-    function handleResize() {
-      setWindowSize({
-        width: window.innerWidth,
-        height: window.innerHeight,
-      });
-    }
-
-    window.addEventListener('resize', handleResize);
-
-    handleResize();
-
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
-  return windowSize;
 }
