@@ -6,13 +6,25 @@ function Card({ name, value, info, type }) {
     window.open(url, "_blank", "noopener,noreferrer");
   };
 
+  function TrimName(name) {
+    if (name.length > 130) {
+      let name1 = name.slice(0, 130);
+      while (name1.charAt(name1.length - 1) !== " " && name1.length !== 0) {
+        name1 = name1.slice(0, -1);
+      }
+      return name1 + "...";
+    } else {
+      return name + "...";
+    }
+  }
+
   return (
     <motion.div layout className="flex sm:min-w-96 min-h-96">
       <div className="relative max-w-sm align-center w-[23rem] h-96 overflow-hidden shadow-lg rounded-lg border dark:border-gray-500">
         <div className="px-6 py-4">
           <div className="font-bold mb-2 text-white text-3xl tracking-tight">{name}</div>
           <p className="text-gray-600 text-lg absolute top-24">
-            {info}
+            {TrimName(info)}
           </p>
         </div>
         <div className="px-6 pt-4 pb-2 absolute bottom-20">
