@@ -37,14 +37,8 @@ function FilterResource({ resource }) {
                     </h1>
                 </div>
             </div>
-            {/* <h1 className="flex mb-8 text-white text-2xl justify-center sm:text-5xl font-bold pt-10">
-                DevOps
-            </h1>
-            <span className="bg-gradient-to-r from-[#CC03FE] to-[#E34B2E] bg-clip-text text-transparent font-lato font-[900] text-2xl md:text-6xl xl:text-7xl 2xl:text-8xl ">
-            Resources
-            </span> */}
             <div className="m-auto">
-                <div className='max-w-md mx-auto'>
+                <div className='max-w-xl mx-auto'>
                     <div className="relative flex items-center w-full h-12 rounded-lg focus-within:shadow-lg bg-white overflow-hidden">
                         <div className="grid place-items-center h-full w-12 text-gray-300">
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -56,10 +50,16 @@ function FilterResource({ resource }) {
                             className="peer h-full w-full outline-none text-sm text-gray-700 pr-2"
                             type="text"
                             id="search"
+                            value={q}
                             placeholder="Search for resources..."
                             onChange={(e) => {
                                 setQ(e.target.value);
                                 setTrigger(true);
+                            }}
+                            onKeyDown={e => {
+                                if (e.key === "Escape") {
+                                    setQ("")
+                                }
                             }}
                         />
                     </div>
@@ -74,7 +74,7 @@ function FilterResource({ resource }) {
                                             setQ(x.name);
                                             setTrigger(false);
                                         }}
-                                        className=" bg-white p-1 w-64 border border-grey-600 min-h-10 md:h-8 sm:w-6/12 md:w-10/11"
+                                        className="bg-white p-1 border border-grey-600 min-h-10 md:h-8 w-full md:w-10/11 md:max-w-xl"
                                     >
                                         {x.name}
                                     </div>

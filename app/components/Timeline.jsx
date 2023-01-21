@@ -138,7 +138,7 @@ export default function Timeline({ tweets }) {
       <div className={styles.bg}>
         <VerticalTimeline lineColor={'#F3F3F3'}>
           {tweets.map((tweet) => {
-            return <div key={tweet}>{render(tweet)}</div>;
+            return <div key={tweet.id}>{render(tweet)}</div>;
           })}
           <VerticalTimelineElement
             iconStyle={{
@@ -201,4 +201,3 @@ function useWindowSize() {
   }, []);
   return windowSize;
 }
-
