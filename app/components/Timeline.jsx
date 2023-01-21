@@ -138,7 +138,7 @@ export default function Timeline({ tweets }) {
       <div className={styles.bg}>
         <VerticalTimeline lineColor={'#F3F3F3'}>
           {tweets.map((tweet) => {
-            return <div key={tweet}>{render(tweet)}</div>;
+            return <div key={tweet.id}>{render(tweet)}</div>;
           })}
           <VerticalTimelineElement
             iconStyle={{
@@ -157,14 +157,23 @@ export default function Timeline({ tweets }) {
     );
   } else {
     return (
-      <main
-        className="flex flex-col justify-center px-8 bg-gray-50 dark:bg-black"
-      >
-      <div className="flex flex-col justify-center items-start max-w-2xl mx-auto mb-16">
-        {tweets.map((tweet) => (
-          <Tweet key={tweet.id} {...tweet} />
-        ))}
-      </div>
+      <main className='flex flex-col justify-center bg-gray-50 dark:bg-black'>
+        <div className='flex flex-col justify-center items-start max-w-2xl mx-auto mb-4'>
+          {tweets.map((tweet) => (
+            <div
+              key={tweet.id}
+              className='rounded border border-gray-300 dark:border-gray-800 m-2'
+            >
+              <Tweet
+                key={tweet.id}
+                {...tweet}
+              />
+            </div>
+          ))}
+        </div>
+        <Link href={'/resources'}>
+          <div className={styles.button1}>See All</div>
+        </Link>
       </main>
     );
   }
