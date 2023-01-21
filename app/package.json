@@ -11,6 +11,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "cmdk": "^0.1.21",
     "comma-number": "^2.1.0",
     "date-fns": "^2.29.3",
     "framer-motion": "^8.0.2",

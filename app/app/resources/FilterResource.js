@@ -23,25 +23,46 @@ function FilterResource({ resource }) {
             }
         });
     }
+
     return (
         <>
-            <h1 className="flex text-white text-2xl justify-center sm:text-5xl font-bold pt-10">
-                ALL RESOURCES
+            <div className="relative flex flex-col items-center z-20 sm:items-start sm:flex-row sm:justify-around mt-[4vh] ">
+                <div className="sm:text-start text-center sm:mr-20 sm:max-w-[40vw] mt-[7vh] sm:mt-[10vh] ">
+                    <h1 className="mb-4 text-5xl sm:text-3xl  text-white  dark:text-white  md:text-6xl xl:text-7xl 2xl:text-8xl font-lato font-[900]">
+                        DevOps
+                        <br />
+                        <span className="bg-gradient-to-r from-[#CC03FE] to-[#E34B2E] bg-clip-text text-transparent font-lato font-[900] text-5xl md:text-6xl xl:text-7xl 2xl:text-8xl ">
+                            Resources
+                        </span>
+                    </h1>
+                </div>
+            </div>
+            {/* <h1 className="flex mb-8 text-white text-2xl justify-center sm:text-5xl font-bold pt-10">
+                DevOps
             </h1>
-            <div className=" m-auto">
-                <div className="flex md:h-12 md:mb-[2.25rem] justify-center">
-                    <input
-                        type="search"
-                        name="search-form"
-                        id="search-form"
-                        className="focus:outline-0 mt-5  w-64  h-8 md:mt-9 pl-2 md:w-10/11 md:h-12 sm:w-6/12"
-                        placeholder="Search for..."
-                        value={q}
-                        onChange={(e) => {
-                            setQ(e.target.value);
-                            setTrigger(true);
-                        }}
-                    />
+            <span className="bg-gradient-to-r from-[#CC03FE] to-[#E34B2E] bg-clip-text text-transparent font-lato font-[900] text-2xl md:text-6xl xl:text-7xl 2xl:text-8xl ">
+            Resources
+            </span> */}
+            <div className="m-auto">
+                <div className='max-w-md mx-auto'>
+                    <div className="relative flex items-center w-full h-12 rounded-lg focus-within:shadow-lg bg-white overflow-hidden">
+                        <div className="grid place-items-center h-full w-12 text-gray-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                            </svg>
+                        </div>
+
+                        <input
+                            className="peer h-full w-full outline-none text-sm text-gray-700 pr-2"
+                            type="text"
+                            id="search"
+                            placeholder="Search for resources..."
+                            onChange={(e) => {
+                                setQ(e.target.value);
+                                setTrigger(true);
+                            }}
+                        />
+                    </div>
                 </div>
                 <div className="flex flex-col items-center">
                     {trigger &&
