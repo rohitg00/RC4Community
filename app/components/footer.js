@@ -33,7 +33,7 @@ const Footer = () => {
             <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Star Us</h2>
             <ul className="text-gray-600 dark:text-gray-400">
               <li className="mb-4">
-                <a href="https://github.com/RocketChat/RC4Community" className="hover:underline ">Github</a>
+                <a href="https://github.com/rohitg00/devopscommunity" className="hover:underline ">Github</a>
               </li>
             </ul>
           </div>
