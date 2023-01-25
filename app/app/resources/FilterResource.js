@@ -13,7 +13,7 @@ function FilterResource({ resource }) {
 
     function search(items) {
         return items?.filter((item) => {
-            if (item.id > 7) {
+            if (item.id >= 7) {
                 return searchParam.some((newItem) => {
                     return (
                         item[newItem]?.toString().toLowerCase().indexOf(q.toLowerCase()) >
@@ -70,6 +70,7 @@ function FilterResource({ resource }) {
                             return (
                                 q && (
                                     <div
+                                        key={x.id}
                                         onClick={() => {
                                             setQ(x.name);
                                             setTrigger(false);
