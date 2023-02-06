@@ -157,12 +157,12 @@ export default function Timeline({ tweets }) {
     );
   } else {
     return (
-      <main className='flex flex-col justify-center bg-gray-50 dark:bg-black'>
+      <main className='flex flex-col justify-center bg-black'>
         <div className='flex flex-col justify-center items-start max-w-2xl mx-auto mb-4'>
           {tweets.map((tweet) => (
             <div
               key={tweet.id}
-              className='rounded border border-gray-300 dark:border-gray-800 m-2'
+              className='rounded border border-gray-800 m-2'
             >
               <Tweet
                 key={tweet.id}

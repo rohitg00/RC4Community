@@ -27,7 +27,7 @@ export default function Tweet({
   return (
     <div
       onClick={() => openInNewTab(tweetUrl)}
-      className='tweet rounded-lg dark:border-gray-800 px-6 py-4 my-4 w-full'
+      className='tweet rounded-lg border-gray-800 px-6 py-4 my-4 w-full'
     >
       <div className='flex items-center'>
         <a
@@ -52,14 +52,14 @@ export default function Tweet({
           className='author flex flex-col ml-4 !no-underline'
         >
           <span
-            className='flex items-center font-bold !text-gray-900 dark:!text-gray-100 leading-5'
+            className='flex items-center font-bold !text-gray-100 leading-5'
             title={author.name}
           >
             {author.name}
             {author.verified ? (
               <svg
                 aria-label='Verified Account'
-                className='ml-1 text-blue-500 dark:text-white inline h-4 w-4'
+                className='ml-1 text-white inline h-4 w-4'
                 viewBox='0 0 24 24'
               >
                 <g fill='currentColor'>
@@ -94,7 +94,7 @@ export default function Tweet({
           </svg>
         </a>
       </div>
-      <div className='mt-4 mb-1 leading-normal whitespace-pre-wrap  !text-gray-700 dark:!text-gray-200'>
+      <div className='mt-4 mb-1 leading-normal whitespace-pre-wrap !text-gray-200'>
         {formattedText}
       </div>
       {media && media.length ? (
@@ -131,7 +131,7 @@ export default function Tweet({
           {format(createdAt, 'h:mm a - MMM d, y')}
         </time>
       </a>
-      <div className='flex text-sm !text-gray-700 dark:!text-gray-300 mt-2'>
+      <div className='flex text-sm !text-gray-300 mt-2'>
         <a
           className='flex items-center mr-4 !text-gray-500 hover:!text-blue-600 transition hover:!underline'
           href={replyUrl}

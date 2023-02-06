@@ -2,7 +2,7 @@ import Hero from "../components/Hero/Hero";
 import Nav from "../components/Hero/Nav";
 import { getTweets } from '../lib/twitterAPI.js';
 import Timeline from "../components/Timeline";
-import Footer from "../components/footer";
+import Newsletter from "./Newsletter";
 
 let imgUrl = "bgdevops.gif";
 const gifStyle = {
@@ -26,6 +26,7 @@ export default async function Home() {
         </div>
       </div>
       <Timeline tweets={tweets} />
+      <Newsletter  />
     </>
   );
 }
