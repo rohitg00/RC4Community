@@ -31,9 +31,6 @@ const Footer = () => {
               <li className="mb-4">
                 <a href="https://chat.whatsapp.com/JYIvvb5jVBEG88aLl7VobV" className="hover:underline">WhatsApp</a>
               </li>
-              <li className="mb-4">
-                <a href="https://chat.whatsapp.com/JYIvvb5jVBEG88aLl7VobV" className="hover:underline">WhatsApp</a>
-              </li>
               <li>
                 <a href="https://t.me/+Tj_gjbgG6LswNDM1" className="hover:underline">Telegram</a>
               </li>
