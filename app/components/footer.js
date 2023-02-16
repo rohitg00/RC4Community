@@ -2,17 +2,18 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="p-4 sm:p-6 bg-black mt-12 border-t-2 border-gray-800">
+    <footer className="p-4 bg-white sm:p-6 dark:bg-black mt-12">
       <div className="md:flex md:justify-between">
         <div className="mb-6 md:mb-0">
           <a href="#" className="flex items-center">
-            <span className="self-center text-2xl font-semibold whitespace-nowrap text-white">DevOpsCommunity</span>
+            <img src="/devopscommlogo.svg" className="h-8 mr-1" alt="DevOps Community Logo" width="40px" height="40px" />
+            <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">DevOpsCommunity</span>
           </a>
         </div>
         <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
           <div>
-            <h2 className="mb-6 text-sm font-semibold uppercase text-white">Resources</h2>
-            <ul className="text-gray-400">
+            <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Resources</h2>
+            <ul className="text-gray-600 dark:text-gray-400">
               <li className="mb-4">
                 <a href="#" className="hover:underline">DevOpsCommunity</a>
               </li>
@@ -22,16 +23,25 @@ const Footer = () => {
             </ul>
           </div>
           <div>
-            <h2 className="mb-6 text-sm font-semibold  uppercase text-white">Follow us</h2>
-            <ul className="text-gray-400">
-              <li>
+            <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Join us</h2>
+            <ul className="text-gray-600 dark:text-gray-400">
+              <li className="mb-4">
                 <a href="https://twitter.com/i/communities/1523681883384549376" className="hover:underline">Twitter</a>
+              </li>
+              <li className="mb-4">
+                <a href="https://chat.whatsapp.com/JYIvvb5jVBEG88aLl7VobV" className="hover:underline">WhatsApp</a>
+              </li>
+              <li className="mb-4">
+                <a href="https://chat.whatsapp.com/JYIvvb5jVBEG88aLl7VobV" className="hover:underline">WhatsApp</a>
+              </li>
+              <li>
+                <a href="https://t.me/+Tj_gjbgG6LswNDM1" className="hover:underline">Telegram</a>
               </li>
             </ul>
           </div>
           <div>
-            <h2 className="mb-6 text-sm font-semibold uppercase text-white">Star Us</h2>
-            <ul className="text-gray-400">
+            <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Star Us</h2>
+            <ul className="text-gray-600 dark:text-gray-400">
               <li className="mb-4">
                 <a href="https://github.com/rohitg00/devopscommunity" className="hover:underline ">Github</a>
               </li>
@@ -39,7 +49,8 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <hr className="my-6 sm:mx-auto border-gray-700 lg:my-8" />
+      <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+
       <div className="sm:flex sm:items-center sm:justify-between">
         <span className="text-sm sm:text-center text-gray-400"><a href="https://github.com/RocketChat/RC4Community" className="hover:underline">Powered by Rocket.Chat</a>
         </span>
