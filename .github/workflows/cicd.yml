@@ -48,4 +48,4 @@ jobs:
           script: |
             docker login
             docker stop devopscomm
-            docker run --name devopscomm -p 3000:3000 -d --rm "palanikannanm1437/devopscomm-rc4-image:${{ steps.meta.outputs.tags }}"
+            docker run --name devopscomm -p 3000:3000 -d --rm palanikannanm1437/devopscomm-rc4-image:master
