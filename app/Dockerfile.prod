@@ -1,15 +1,17 @@
 FROM node:16-alpine
 
 RUN apk add --no-cache libc6-compat
+ARG TWITTER_API_KEY
 
 WORKDIR /app
 
-COPY package.json package-lock.json* ./
+COPY ./package.json ./package-lock.json* ./
 
 COPY . .
 
 RUN npm install
 
+ENV TWITTER_API_KEY $TWITTER_API_KEY
 RUN npm run build
 
 ENV NODE_ENV production
