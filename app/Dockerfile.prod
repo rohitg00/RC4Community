@@ -22,6 +22,6 @@ RUN adduser --system --uid 1001 nextjs
 EXPOSE 3000
 
 ENV PORT 3000
-ENV TWITTER_API_KEY ${TWITTER_API_KEY}
+ENV TWITTER_API_KEY $TWITTER_API_KEY
 
 CMD ["npm", "run" ,"start"]
