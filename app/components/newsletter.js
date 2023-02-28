@@ -2,14 +2,14 @@ import React from 'react'
 
 function Newsletter() {
     return (
-        <section class="bg-black ">
-            <div class="py-4 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6 md:border-t-0 sm:border-t-2 sm:border-gray-800 mt-2" >
-                <div class="mx-auto max-w-screen-md sm:text-center">
-                    <h2 class="mb-4 text-3xl tracking-tight font-extrabold sm:text-4xl text-white">Sign up for our newsletter</h2>
-                    <p class="mx-auto mb-8 max-w-2xl font-light md:mb-12 sm:text-xl text-gray-400">Stay up to date with the roadmap progress, announcements and exclusive discounts feel free to sign up with your email.</p>
-                    <div class="items-center mx-auto mb-3 space-y-4 max-w-screen-sm sm:flex sm:space-y-0">
+        <section className="bg-black ">
+            <div className="py-4 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6 md:border-t-0 sm:border-t-2 sm:border-gray-800 mt-2" >
+                <div className="mx-auto max-w-screen-md sm:text-center">
+                    <h2 className="mb-4 text-3xl tracking-tight font-extrabold sm:text-4xl text-white">Sign up for our newsletter</h2>
+                    <p className="mx-auto mb-8 max-w-2xl font-light md:mb-12 sm:text-xl text-gray-400">Stay up to date with the roadmap progress, announcements and exclusive discounts feel free to sign up with your email.</p>
+                    <div className="items-center mx-auto mb-3 space-y-4 max-w-screen-sm sm:flex sm:space-y-0">
                         <div>
-                            <button type="submit" class="py-3 px-5 w-full text-sm font-medium text-center text-white rounded-lg border cursor-pointer bg-primary-700 border-primary-600 hover:bg-primary-800 bg-primary-600 hover:bg-primary-700 focus:ring-primary-800">Subscribe</button>
+                            <button type="submit" className="py-3 px-5 w-full text-sm font-medium text-center text-white rounded-lg border cursor-pointer bg-primary-700 border-primary-600 hover:bg-primary-800 bg-primary-600 hover:bg-primary-700 focus:ring-primary-800">Subscribe</button>
                         </div>
                     </div>
                     <div className="flex justify-center">
